@@ -1,0 +1,124 @@
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI", Roboto,Oxygen,Ubuntu,Cantarell,
+                "Open Sans", "Helvetica Neue" ,sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+/* Tabs style */
+.wrapper {
+    width: 600px;
+    margin: 60px auto 0 auto;
+}
+.tab-list {
+    display: flex;
+    margin-bottom: 25px;
+}
+.tab {
+    padding: 0 12px 6px;
+    border-bottom: 5px solid #ccc;
+    color: #333;
+    cursor: pointer;
+    font-size: 15px;
+}
+.tab:not(:last-child) {
+    margin-right: 35px;
+}
+.tab.active {
+    font-weight: bold;
+    border-bottom-color: rgb(255, 219, 58);
+}
+.tab.disabled {
+    cursor: not-allowed;
+    color: #ccc;
+    border-bottom-color: #eee;
+}
+
+/* accordion */
+.accordion {
+    margin-top: 100px;
+    padding-top: 50px;
+    border-top: 1px dashed #ccc;
+}
+.accordion-item {
+    border: 1px solid #e1e1e1;
+}
+.accordion .accordion-item:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.accordion .accordion-item:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.accordion .accordion-item:first-child .accordion-head {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.accordion .accordion-item:last-child .accordion-head {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.accordion .accordion-item.active:last-child .accordion-head {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.accordion-item:not(:last-child) {
+    border-bottom: 0;
+}
+.accordion-item.active .accordion-body {
+    border-top: 1px solid #e1e1e1;
+}
+.accordion-item.active .accordion-head {
+    background-color: #f6f6f6;
+}
+.accordion-head {
+    padding: 15px;
+    position: relative;
+}
+.accordion-head:hover {
+    cursor: pointer;
+    background-color: #f6f6f6;
+}
+.accordion-head.accordion-disabled:hover {
+    cursor: not-allowed;
+    background-color: transparent;
+}
+.accordion-head.accordion-disabled {
+    color: #ccc;
+}
+.accordion-body {
+    padding: 25px 15px 25px;
+}
+
+.arrow { /* expand arrow icon */
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 7px solid #c0c0c0;
+    position: absolute;
+    right: 15px;
+    top: 21px;
+    transform: rotate(-90deg);
+}
+.accordion-item.active .arrow {
+    border-top-color: rgb(128, 128, 127);
+    transform: rotate(-180deg);
+}
+.accordion-disabled .arrow {
+    border-top-color: #eee;
+}
+
+.hide {
+    display: none;
+}
